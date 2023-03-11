@@ -1,0 +1,334 @@
+@import "global.css";
+/* Using a string */
+
+/* ---------------------- Buttons --------------------*/
+.btn-lg {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  padding: 0.875rem 1rem;
+  border-radius: 0.3rem;
+}
+
+.btn-sm {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.btn-navbar {
+  margin-bottom: 1em;
+  /*width: 175px;*/
+  width: 65%;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.btn-bandbox {
+  margin-bottom: 1em;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.btn-primary {
+  box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+}
+
+.btn-primary:hover,
+.btn-primary:hover,
+.btn-isDisabled {
+  color: var(--white);
+  border-color: var(--red);
+  background-color: var(--red);
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08),
+    0 0 0 0 rgba(94, 114, 228, 0.5);
+}
+
+.btn-arrow {
+  font-size: 2rem;
+  background-color: transparent;
+  border-radius: 50%;
+  max-height: 4rem;
+  max-width: 4rem;
+  border: 0.2rem solid var(--red);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.btn-arrow:hover {
+  color: var(--white);
+  border-color: var(--red);
+  background-color: var(--red);
+}
+
+.dropdown {
+  width: 125px;
+}
+
+.dropdown .btn-dropdown {
+  margin-bottom: 0.2em;
+  word-wrap: break-word;
+  text-align: left;
+  width: inherit;
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.dropdown:hover .btn-dropdown {
+  color: var(--white);
+  border-color: var(--red);
+  background-color: var(--red);
+}
+
+.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  width: inherit;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  margin-bottom: 0.2em;
+  float: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ---------------------- Images --------------------*/
+.img-header {
+  padding: 0.25rem;
+  height: auto;
+  width: 75%;
+}
+
+.img-profile {
+  padding: 0.25rem;
+  height: auto;
+  width: 50%;
+  border-radius: 50%;
+  border: 0.05rem solid var(--red);
+  background-color: var(--red);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
+}
+
+/* ---------------------- gridMenu Div + userMenu.pug --------------------*/
+.gridMenu {
+  text-align: center;
+  border-collapse: collapse;
+}
+
+#userMenuTopImg {
+  width: 250px;
+}
+
+/* ---------------------- gridContainer Div --------------------*/
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "gridMenu gridCalendar";
+}
+#gridMenuContainer {
+  grid-area: gridMenu;
+}
+#gridCalendarContainer {
+  grid-area: gridCalendar;
+}
+
+/* ---------------------- gridCalendar Div --------------------*/
+.gridCalendar {
+  border-collapse: collapse;
+  border: 1px solid var(--grey);
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 10fr;
+  grid-template-areas:
+    "gridCalendarMenu "
+    "gridWeek         "
+    "gridBookings     ";
+}
+#gridCalendarMenuContainer {
+  grid-area: gridCalendarMenu;
+}
+#gridWeekContainer {
+  grid-area: gridWeek;
+}
+#gridBookingsContainer {
+  grid-area: gridBookings;
+}
+
+/* ---------------------- gridCalendarMenu Div --------------------*/
+.gridCalendarMenu {
+  display: grid;
+  grid-template-columns: repeat(1, 175px auto);
+  grid-template-rows: 1fr;
+  gap: 5px;
+  grid-template-areas: "by bandboxes";
+  padding-top: 1%;
+  padding-left: 1%;
+  margin-top: 1em;
+}
+
+#gridCalendarMenu1 {
+  grid-area: by;
+  margin-right: 1em;
+}
+
+#gridCalendarMenu2 {
+  grid-area: bandboxes;
+}
+
+/* ---------------------- gridWeek Div --------------------*/
+.gridWeek {
+  border-collapse: collapse;
+  border: 1px solid var(--grey);
+  border-left: none;
+  border-right: none;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 5px;
+  grid-template-areas:
+    "month month month month month month month month month "
+    "arrowLeft man tirs ons tors fre lør søn arrowRight";
+  padding: 1%;
+}
+#gridWeek0 {
+  grid-area: month;
+  margin: 0px;
+}
+
+#gridWeek1 {
+  grid-area: weekNr;
+  margin: 0px;
+}
+
+#gridWeek2 {
+  grid-area: arrowLeft;
+}
+#gridWeek3 {
+  grid-area: man;
+}
+#gridWeek4 {
+  grid-area: tirs;
+}
+#gridWeek5 {
+  grid-area: ons;
+}
+#gridWeek6 {
+  grid-area: tors;
+}
+#gridWeek7 {
+  grid-area: fre;
+}
+#gridWeek8 {
+  grid-area: lør;
+}
+#gridWeek9 {
+  grid-area: søn;
+}
+#gridWeek10 {
+  grid-area: arrowRight;
+}
+
+.weekdayLabel {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 200;
+}
+
+/* ---------------------- gridBookings Div --------------------*/
+.gridBookings {
+  display: grid;
+  grid-template-columns: 1fr 7fr 1fr;
+  gap: 5px;
+  grid-template-areas: "hours timeslots  .";
+  padding-top: 1%;
+  padding-left: 1%;
+}
+#gridHoursContainer {
+  grid-area: hours;
+}
+#gridTimeslotsContainer {
+  grid-area: timeslots;
+}
+
+/* ---------------------- gridHours Div --------------------*/
+.gridHours {
+  border-collapse: collapse;
+  border: 1px solid var(--grey);
+  border-bottom: none;
+  border-top: none;
+  border-left: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(24, 1fr);
+}
+
+.gridHour {
+  font-weight: bold;
+}
+
+/* ---------------------- gridTimeslots Div --------------------*/
+.gridTimeslots {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "timeslotsMan timeslotsTirs timeslotsOns timeslotsTors timeslotsFre timeslotsLoer timeslotsSoen";
+}
+#gridTimeslotsManContainer {
+  grid-area: timeslotsMan;
+}
+#gridTimeslotsTirContainer {
+  grid-area: timeslotsTirs;
+}
+#gridTimeslotsOnsContainer {
+  grid-area: timeslotsOns;
+}
+#gridTimeslotsTorContainer {
+  grid-area: timeslotsTors;
+}
+#gridTimeslotsFreContainer {
+  grid-area: timeslotsFre;
+}
+#gridTimeslotsLoerContainer {
+  grid-area: timeslotsLoer;
+}
+#gridTimeslotsSoenContainer {
+  grid-area: timeslotsSoen;
+}
+
+/* ---------------------- gridTimeslotContainerWeekday Class --------------------*/
+.gridTimeslotContainerWeekday {
+  border-collapse: collapse;
+  border: 1px solid var(--grey);
+  border-bottom: none;
+  border-top: none;
+  border-left: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(24, 1fr);
+}
+
+.weekdayCell {
+  font-weight: 500;
+  color: var(--white);
+  border-radius: 0px;
+  background-color: var(--grey);
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  padding: 0.3rem;
+  text-transform: uppercase;
+}

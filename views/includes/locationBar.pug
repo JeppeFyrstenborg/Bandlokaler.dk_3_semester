@@ -1,0 +1,12 @@
+html
+  head
+    script(src="/js/changeCityActions.js") 
+  body
+    .dropdown
+      a(class="btn btn-sm btn-primary btn-dropdown-icon btn-dropdown" role="button" id='gridCalendarMenu1')
+        span.btn-inner--icon.bi-caret-down-fill
+        span.btn-inner--text(id="selectedCity") select city
+      .dropdown-content
+        each city in cities
+          a(class="btn btn-sm btn-primary btn-icon" onclick='sendCityToServer(\'' + city + '\');')
+            span(class="btn-inner--text" value=""+city)= city

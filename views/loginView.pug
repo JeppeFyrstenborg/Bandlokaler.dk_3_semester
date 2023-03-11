@@ -1,0 +1,26 @@
+html(lang = "dk")
+  head
+    meta(charset="UTF-8")
+    link(rel="stylesheet", href="css/loginStyle.css")
+    script(src="js/loginActions.js" defer)
+    title Bandlokaler.dk-login
+  body
+    form(action="/login" id="loginForm")
+      div(id= 'gridContainer')
+        div(id="gridHeader")
+          h1(id="header") Bandlokaler.dk-Login
+          p(id="headText") Udfyld e-mail og adgangskode.
+          br
+        div(id="gridEmail")
+          label(class='labelBeforeInput') E-mail
+          br
+          input(type="email" id="email" name="email" autocomplete="username" placeholder="Indtast e-mail" onkeyup="validateInput(this)" on required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$")
+        div(id="gridPassword")
+          label(class='labelBeforeInput') Password
+          br
+          input(type="password" name="password" autocomplete="current-password" id="password" placeholder="Indtast password" onkeyup="validateInput(this)" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="30" minlength="8")
+          br
+        div(id="gridBtn")
+          button(class='btn' type="button" value="Log in" onclick="loginValidation(loginForm)") Log in
+          a(class='btn btn-med' type="button" value="Opret bruger" href="/createuser") Opret bruger
+        div(id='passHint') 

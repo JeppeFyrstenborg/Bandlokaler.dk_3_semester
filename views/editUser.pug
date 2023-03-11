@@ -1,0 +1,63 @@
+html(lang = "dk")
+  head
+    meta(charset="UTF-8")
+    link(rel="stylesheet" href="/css/editUserStyle.css")
+    script(src="/js/editUserActions.js" defer)
+    title editUser
+  body
+    div(id="gridContainer")
+      div(id='menuGrid')
+        include includes/userMenu
+      div(id="editUserGrid")
+        div(id="editUserHead")
+          h1 Min profil
+        div(id="editUserForm")
+          div(id="currentUserInfo")
+            div(id="gridHeader1") 
+              h2(id="header1") Dine nuværende oplysninger
+            div(id="gridCurrentMail")
+              br
+              h5 Nuværende Email
+              input(type="text" name="currentEmail" id="currentEmailInput" value=`${user.email}` disabled)
+            div(id="gridCurrentPickCity")
+              h5 Nuværende byer:
+              ol
+                each city in user.cities
+                  li= city
+            div(id="gridCurrentBandname")
+              h5 Nuværende Bandnavn
+              input(type="text" name="currentBandname" id="currentBandnameInput" value=`${user.bandName}` disabled)
+          div(id="newUserInfo")
+            div(id="gridHeader2")
+              h2(id="header2") Ret dine oplysninger her
+            div(id="gridNewMail")
+              br
+              h5 Ny Email
+              input(type="text" name="newMail" id="newMail" placeholder="Indtast mail")
+            div(id="gridNewPickCity")
+              h5 Vælg ny by:
+              select(name='newCities' id='newCities' placeholder='Vælg by')
+                case user.cities[0]
+                  when 'Aarhus'
+                    option(value='Aarhus' selected="selected") Aarhus
+                    option(value='Odense') Odense
+                    option(value='Aalborg') Aalborg
+                  when 'Odense'
+                    option(value='Aarhus') Aarhus
+                    option(value='Odense' selected="selected") Odense
+                    option(value='Aalborg') Aalborg
+                  default 
+                    option(value='Aarhus') Aarhus
+                    option(value='Odense') Odense
+                    option(value='Aalborg' selected="selected") Aalborg
+            div(id="gridNewBandname")
+              h5 Nyt Bandnavn
+              input(type="text" name="newBandname" id="newBandname" placeholder="Indtast bandnavn")
+            div(id="gridNewPassword")
+              h5 Nyt Password
+              input(type="password" autocomplete="new-password" name="newPassword" id="newPassword" placeholder="Indtast password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")
+              h5 Gentag password
+              input(type="password" autocomplete="new-password" name="newPasswordCheck" id="newPasswordCheck" placeholder="Gentag password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")
+            .gridBtn(id="gridBtn")
+              button(class='btn' type="button" value="createUser" onclick="update()") Bekræft
+          div(id='passHint') 

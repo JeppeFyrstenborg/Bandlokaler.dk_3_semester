@@ -1,0 +1,42 @@
+html
+  head 
+    link(rel="stylesheet" href="/css/calendarStyle.css")
+    script(src="/js/calendarActions.js" defer)
+    script(src="/js/updateTimeslots.js" defer) 
+  body(onload='updateDateUI(), disableMenuButton()')
+    .gridContainer
+      .gridMenu(id="gridMenuContainer")
+        include includes/userMenu  
+      .gridCalendar(id="gridCalendarContainer")  
+        .gridCalendarMenu(id="gridCalendarMenuContainer")
+          include includes/locationBar  
+        .gridWeek(id="gridWeekContainer")
+          h2(id='gridWeek0')
+          button(class="btn btn-arrow btn-icon" type='button' id='gridWeek2' onclick="previousWeek()")
+            span(class="bi bi-chevron-left")
+          div(class="weekdayLabel" id='gridWeek3') 21#[br]Mandag
+          div(class="weekdayLabel" id='gridWeek4') 22#[br]Tirsdag
+          div(class="weekdayLabel" id='gridWeek5') 23#[br]Onsdag
+          div(class="weekdayLabel" id='gridWeek6') 24#[br]Tordag
+          div(class="weekdayLabel" id='gridWeek7') 25#[br]Fredag
+          div(class="weekdayLabel" id='gridWeek8') 26#[br]Lørdag
+          div(class="weekdayLabel" id='gridWeek9') 27#[br]Søndag
+          button(class="btn btn-arrow btn-icon" type='button' id='gridWeek10' onclick="nextWeek()")
+            span(class="bi bi-chevron-right")
+        .gridBookings(id="gridBookingsContainer")
+          include includes/bookTime
+          .gridHours(id="gridHoursContainer")
+          .gridTimeslots(id="gridTimeslotsContainer")
+            .gridTimeslotsMan(class="gridTimeslotContainerWeekday" id="gridTimeslotsManContainer")
+            .gridTimeslotsTir(class="gridTimeslotContainerWeekday" id="gridTimeslotsTirContainer")
+            .gridTimeslotsOns(class="gridTimeslotContainerWeekday" id="gridTimeslotsOnsContainer")
+            .gridTimeslotsTor(class="gridTimeslotContainerWeekday" id="gridTimeslotsTorContainer")
+            .gridTimeslotsFre(class="gridTimeslotContainerWeekday" id="gridTimeslotsFreContainer")
+            .gridTimeslotsLoer(class="gridTimeslotContainerWeekday" id="gridTimeslotsLoerContainer")
+            .gridTimeslotsSoen(class="gridTimeslotContainerWeekday" id="gridTimeslotsSoenContainer")
+          //- script for transfering the server side model data to the client side
+    script.
+      let bandboxesFromServer
+      let selectedBandbox
+      let weekDates = [ new Date() ]
+      let pickedSlotID

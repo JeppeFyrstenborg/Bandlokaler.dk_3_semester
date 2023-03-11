@@ -1,0 +1,41 @@
+html(lang = "dk")
+  head
+    meta(charset="UTF-8")
+    link(rel="stylesheet" href="css/createUserStyle.css")
+    script(src="js/createUserActions.js" defer)
+    title Opret ny bruger
+  body
+    form(action="/createUser" id="createUserForm")
+      .gridContainer
+        .gridHeader(id="gridHeader")
+          h1(id="header") Opret bruger
+          p(id="headText") Udfyld alle felter og tryk opret bruger.
+        .gridMail(id="gridEmail")
+          br
+          label Email
+          br
+          input(type="email" name="email" id="email" placeholder="Indtast mail" onkeyup="validateInput(this)" on required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$")
+        .gridPassword(id="gridPassword")
+          label Password
+          br
+          input(type="password" name="password" id="password" placeholder="Indtast password" onkeyup="validateInput(this)" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")
+          br
+          br
+          label Gentag password
+          br
+          input(type="password" name="passwordCheck" id="passwordCheck" placeholder="Gentag password" onkeyup="validateInput(this)" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")
+        .gridPickCity(id="gridPickCity")
+          label Vælg by:
+          br
+          select(name='cities' id='cities' placeholder='Vælg by')
+            option(value='customSelect' id='intetValgt') *
+            option(value='aarhus') Aarhus
+            option(value='odense') Odense
+            option(value='aalborg') Aalborg
+        .gridBandname(id="gridBandName")
+          label Bandnavn
+          br
+          input(type="text" name="bandName" id="bandName" placeholder="Indtast bandnavn")
+        .gridBtn(id="gridBtns")
+          button(class='btn' type="button" value="createUser" onclick="checkUserAvai(createUserForm)") Opret bruger
+        div(id='passHint')

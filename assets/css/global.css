@@ -1,0 +1,238 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+:root {
+  /* Standard Colors */
+  --red: #ae2424;
+  --light-red: #f7d6c1;
+  --green: #29ae24;
+  --white: #fff;
+  --black: black;
+  --grey: #3e3e3e;
+  --blight-red: #fff2e7;
+
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+.hide-element {
+  display: none !important;
+}
+
+.show-modal {
+  display: block !important;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: left;
+  margin: 0;
+  color: var(--grey);
+  background-color: var(--blight-red);
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #e45e5e;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: inherit;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+
+  color: var(--red);
+}
+
+h1,
+.h1 {
+  font-size: 2.5rem;
+}
+
+h2,
+.h2 {
+  font-size: 2rem;
+}
+
+h3,
+.h3 {
+  font-size: 1.75rem;
+}
+
+h4,
+.h4 {
+  font-size: 1.5rem;
+}
+
+h5,
+.h5 {
+  font-size: 1.25rem;
+}
+
+h6,
+.h6 {
+  font-size: 1rem;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+.btn {
+  color: var(--grey);
+  border-color: var(--light-red);
+  background-color: var(--light-red);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  text-align: center;
+  vertical-align: middle;
+  transition: all 0.15s ease;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+
+  will-change: transform;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  color: var(--white);
+  border-color: var(--red);
+  background-color: var(--red);
+}
+
+.btn-icon-book {
+  color: var(--green);
+}
+
+.btn-icon:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.btn-icon .btn-inner--icon img {
+  width: 30px;
+  color: var(--green);
+}
+
+.btn-icon .btn-inner--text:not(:first-child) {
+  width: 100%;
+  margin-left: 0.5em;
+}
+
+.btn-icon .btn-inner--text:not(:last-child) {
+  margin-right: 0.5em;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.ul-bandboxButtons {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.ul-bandboxButtons li {
+  padding-right: 1em;
+  float: left;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #dbdbdb;
+}
+
+input:focus {
+  background-color: #ffffff;
+  outline: none;
+}
+
+/* Full-width input fields */
+input[type="text"],
+input[type="password"],
+select,
+option {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #dbdbdb;
+}
+
+select:focus {
+  background-color: #ffffff;
+  outline: none;
+}

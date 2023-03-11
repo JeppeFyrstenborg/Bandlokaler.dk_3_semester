@@ -1,0 +1,44 @@
+html
+  head 
+    link(rel="stylesheet" href="/css/myBookingsStyle.css")
+    script(src="/js/myBookingsActions.js" defer)
+  body 
+    div(id="gridContainer") 
+      div(id="gridMenu")
+        include includes/userMenu
+      div(id="gridMybookings")
+        div(id="gridHeader")
+          h1 Mine bookninger
+        div(id="tableBookingsGrid")
+          table(class="customTable")
+            thead(id="theadBookings")
+              tr(id="trhead")
+                th(class="tdBooking")
+                  h2 Bandbox 
+                th 
+                  h2 Dato 
+                th 
+                  h2 Tidspunkt
+                th(class="tdBookingEnd")
+                  h2 Slet booking
+            tbody
+              each booking of bookings
+                tr(id="trBooking" class="trBooking")
+                  td(class="tdBooking")
+                    p= booking.bandbox+" - "+booking.city
+                  if booking.booking.fixedBooking == false
+                    td
+                      p= new Date(booking.booking.startTime * 1000).toDateString()
+                    td
+                      p= ("Kl. "+(new Date(booking.booking.startTime * 1000).getHours()+1)+" - "+(new Date(booking.booking.endTime * 1000).getHours()+1))
+                    td(class="tdBookingEnd")
+                      button(class='btn btn-lg btn-primary' type="button" value=`"${booking.booking.bookingID}"` onclick='deleteBooking(\'' + booking.booking.fixedBooking + " " + booking.booking.bookingID + '\')') Slet tid
+                  else
+                    td
+                      p= booking.booking.startTime.split(" ")[0]
+                    td
+                      p= ("Kl. "+booking.booking.startTime.split(" ")[1]+" - "+booking.booking.endTime.split(" ")[1])
+                    td(class="tdBookingEnd")
+                      button(class='btn btn-lg btn-primary' type="button" value=`"${booking.booking.bookingID}"` onclick='deleteBooking(\'' + booking.booking.fixedBooking + " " + booking.booking.bookingID + '\')') Slet fast tid
+                tr(class="spacer")
+                  td(class="spacer")

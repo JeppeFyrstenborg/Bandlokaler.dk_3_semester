@@ -1,0 +1,27 @@
+html(lang = "dk")
+  head
+    meta(charset="UTF-8")
+    title= title
+    link(rel="stylesheet" href="css/calendarStyle.css")
+    script(src="/js/menuButtonHandler.js" defer) 
+  body
+    img.img-header(src="https://bandlokaler.dk/wp-content/uploads/2020/09/Logo-Bandlokaler.svg" alt="Bandlokaler.dk")
+    img.img-profile(src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="" srcset="")
+    h5= user.bandName
+    ul.navbar
+      li
+        a.btn.btn-lg.btn-primary.btn-icon.btn-navbar(href="/editUser" role="button" name="menuButton" id="menuButtonProfil")
+          span.btn-inner--icon.bi-person-fill
+          span.btn-inner--text PROFIL
+      li
+        a.btn.btn-lg.btn-primary.btn-icon.btn-navbar(href="/myBookings" role="button" name="menuButton" id="menuButtonMineTider")
+          span.btn-inner--icon.bi-calendar-range
+          span.btn-inner--text MINE TIDER
+      li
+        a.btn.btn-lg.btn-primary.btn-icon.btn-navbar(href="/calendar" role="button" name="menuButton" id="menuButtonBooking")
+          span.btn-inner--icon.bi-calendar-plus
+          span.btn-inner--text BOOK BANDBOX
+      li
+        a.btn.btn-lg.btn-primary.btn-icon.btn-navbar(href="/login/logOut" role="button" name="menuButton" id="menuButtonLogOut")
+          span.btn-inner--icon.bi-box-arrow-left
+          span.btn-inner--text Log ud

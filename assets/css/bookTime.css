@@ -1,0 +1,78 @@
+@import "global.css";
+@import "calendarStyle.css";
+/* Float cancel and signup buttons and add an equal width */
+.bookBtn {
+    width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: hsla(0, 0%, 0%, 0.507);
+    padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    position: relative;
+    background-color: var(--blight-red);
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 20%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from { top: -300px; opacity: 0 }
+    to { top: 0; opacity: 1 }
+}
+
+@keyframes animatetop {
+    from { top: -300px; opacity: 0 }
+    to { top: 0; opacity: 1 }
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+}
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .bookBtn {
+        width: 100%;
+    }
+}

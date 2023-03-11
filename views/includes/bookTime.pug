@@ -1,0 +1,29 @@
+html 
+  head
+    link(rel="stylesheet" href="css/bookTime.css")
+    script(src="js/bookings.js")
+  body
+    #id01.modal.hide-element
+      a.btn.btn-sm.btn-primary.btn-icon.close(onclick="document.getElementById('id01').setAttribute('class', 'modal, hide-element')" role="button")
+        span.btn-inner--icon.bi-x(title="Close Modal")
+      form.modal-content
+        .container
+          h1 Book tid
+          label(for="startTime") 
+            b Vælg start tid
+          br
+          #inputTime
+          label(for="endTime")
+            b Vælg antal timer
+          br
+          #pickBookingDuration
+          br
+          label(for="permTime")
+            b Skal denne bookning være en fast tid?
+          input(type="checkbox" id="permTime")
+          br
+          p Husk at hvis man ikke møder op til sin bookning kan der forekomme gebyr.
+            a(href="#" style="color:dodgerblue") Læs mere
+          .clearfix
+            a.hide-element(id="bookButton" role="button")
+              span.btn-inner--text Book tid

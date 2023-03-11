@@ -1,0 +1,103 @@
+@import "global.css";
+
+#gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr;
+  border-collapse: collapse;
+  grid-template-areas: "gridMenu gridRight";
+}
+
+#gridMenu {
+  grid-area: gridMenu;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+#gridMybookings {
+  grid-area: gridRight;
+  border-collapse: collapse;
+  border: 1px solid var(--grey);
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  gap: 5px;
+  margin-right: 5%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr, 7fr;
+  grid-template-areas:
+    "head"
+    "bookings";
+}
+
+#gridHeader {
+  grid-area: head;
+  gap: 5px;
+  padding-top: 1%;
+  padding-left: 1%;
+  margin-top: 1em;
+  border-collapse: collapse;
+  border: 3px solid var(--grey);
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+#tableBookingsGrid {
+  grid-area: bookings;
+  width: 100%;
+  padding-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 1%;
+}
+.customTable {
+  width: 100%;
+  padding-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 1%;
+  margin-right: 5%;
+  border-radius: 1rem;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+#trhead {
+  background-color: var(--blight-red);
+  opacity: 1;
+}
+
+.spacer {
+  height: 40px;
+  background-color: var(--blight-red);
+}
+.spacer:hover,
+#trhead:hover {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+tr {
+  background-color: var(--light-red);
+  vertical-align: middle;
+  border-color: var(--light-red);
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+tr:hover {
+  transform: translateY(-3px);
+  opacity: 1;
+}
+td {
+  border-collapse: collapse;
+}
+
+.tdBookingEnd {
+  border-radius: 0rem 1rem 1rem 0rem;
+}
+
+.tdBooking {
+  height: 80px;
+  border-radius: 1rem 0rem 0rem 1rem;
+}
